@@ -1,0 +1,89 @@
+:root {
+  --bg: #0b0f19;
+  --card: #121828;
+  --muted: #9aa4bf;
+  --text: #e5e9f5;
+  --primary: #7c5cff;
+  --primary-600: #6a46ff;
+  --accent: #00e2a3;
+  --ring: rgba(124, 92, 255, 0.45);
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; height: 100%; }
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 800px at 80% -10%, rgba(124, 92, 255, 0.25), transparent 60%),
+              radial-gradient(800px 600px at 10% 10%, rgba(0, 226, 163, 0.15), transparent 60%),
+              var(--bg);
+  color: var(--text);
+}
+
+main { max-width: 1120px; margin: 0 auto; padding: 96px 24px; }
+section { padding: 72px 0; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+.nav {
+  position: sticky; top: 0; backdrop-filter: blur(10px);
+  background: rgba(11, 15, 25, 0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  z-index: 50;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; max-width: 1120px; margin: 0 auto; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: 0.4px; }
+.brand-mark { width: 28px; height: 28px; border-radius: 7px; background: linear-gradient(135deg, var(--primary), var(--accent)); box-shadow: 0 8px 24px rgba(124, 92, 255, 0.35); }
+.nav-links { display: none; gap: 22px; }
+.nav-links a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.nav-links a:hover { color: var(--text); }
+@media (min-width: 900px) { .nav-links { display: flex; } }
+
+.hero { display: grid; gap: 24px; align-items: center; }
+.hero h1 { font-size: 44px; line-height: 1.1; margin: 0; letter-spacing: -0.5px; }
+.hero p { font-size: 18px; color: var(--muted); max-width: 680px; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 12px; }
+.button {
+  appearance: none; border: none; background: var(--primary); color: white; font-weight: 700;
+  padding: 14px 18px; border-radius: 12px; cursor: pointer; transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+  box-shadow: 0 10px 28px rgba(124, 92, 255, 0.35);
+}
+.button:hover { transform: translateY(-1px); background: var(--primary-600); }
+.button.secondary { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.12); box-shadow: none; }
+
+.grid { display: grid; gap: 18px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 24px; position: relative; overflow: hidden;
+}
+.card:hover { border-color: rgba(255,255,255,0.16); }
+.card h3 { margin-top: 0; }
+.card p { color: var(--muted); }
+
+.kicker { color: var(--accent); font-weight: 800; letter-spacing: 1px; text-transform: uppercase; font-size: 11px; }
+.section-title { font-size: 32px; letter-spacing: -0.4px; margin: 10px 0 18px; }
+.section-desc { color: var(--muted); max-width: 760px; }
+
+.portfolio-item { display: grid; gap: 14px; }
+.portfolio-tag { display: inline-block; font-size: 12px; color: var(--muted); border: 1px solid rgba(255,255,255,0.12); padding: 4px 8px; border-radius: 999px; }
+
+.testimonial { display: grid; gap: 12px; }
+.quote { font-size: 18px; line-height: 1.6; }
+.quote::before { content: '?'; color: var(--accent); font-size: 26px; margin-right: 6px; }
+.byline { color: var(--muted); font-weight: 600; }
+
+.about { display: grid; gap: 18px; }
+
+.form { display: grid; gap: 12px; }
+.input, .textarea {
+  width: 100%; padding: 14px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.02); color: var(--text); outline: none;
+}
+.input:focus, .textarea:focus { border-color: var(--ring); box-shadow: 0 0 0 6px rgba(124, 92, 255, 0.08); }
+.textarea { min-height: 140px; resize: vertical; }
+
+.footer { border-top: 1px solid rgba(255,255,255,0.08); padding: 24px 0; color: var(--muted); }
+.small { font-size: 13px; }
+
+.hr { height: 1px; background: rgba(255,255,255,0.08); border: 0; margin: 20px 0; }
